@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Css/style.css">
 </head>
-<body>
+<body data-categoria="alimentacion" data-animal="perro">
     <header class="header">
         <a href="index.html">
             <img class="header__logo" src="img/LogoPatiGo.png" alt="Logotipo">
@@ -53,6 +53,9 @@
             <h2>Alimentación</h2>
             <p>Comida seca, comida húmeda, barf, snacks, caldos... Todo lo que tenemos está pensado para cuidar y mantener a nuestros peludos más sanos</p>
         </section>
+
+        <!--Aquí va la lista de productos-->
+        <div id="lista-productos"></div>
         
     </main>
 
@@ -62,6 +65,7 @@
 
     <!-- Vinculo con Javascript-->
     <script src="menu.js"></script>
+    <script src="productos.js"></script> <!-- Script que filtra y muestra productos-->
     
 </body>
 </html>
