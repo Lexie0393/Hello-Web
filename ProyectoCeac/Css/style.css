@@ -123,7 +123,14 @@ h3 {
     background-color: var(--primarioOscuro);
 }
 
-/* Mostrar pestañas al pasar el ratón*/
-.dropdown:hover .dropdown-content {
+/*Mostrar en escritorio con hover*/
+@media (min-width: 768px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/*Mostrar en movil con clase activa*/
+.dropdown-content.show {
     display: block;
 }
