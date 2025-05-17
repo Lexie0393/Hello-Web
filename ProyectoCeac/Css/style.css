@@ -94,3 +94,36 @@ h3 {
 .navegacion__enlace:hover {
     color: var(--secundario);
 }
+/* Contenedor del dropdown*/
+.dropdown {
+    position: relative;
+}
+
+/* Oculta las pestañas por defecto*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primario);
+    min-width: 200px;
+    box-shadow: var(--primario);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--secundario);
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primarioOscuro);
+}
+
+/* Mostrar pestañas al pasar el ratón*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}

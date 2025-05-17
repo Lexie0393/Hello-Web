@@ -18,18 +18,45 @@
  <!--tu menú de navegación aquí-->
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Inicio</a>
-        <a class="navegacion__enlace" href="perro.html">Perro</a>
-        <a class="navegacion__enlace" href="gato.html">Gato</a>
+        
+        <div class="dropdown">
+            <a class="dropdown-toggle navegacion__enlace" href="perro.html">Perro</a>
+            <div class="dropdown-content">
+                <a href="perro.html#alimentacion">Alimentación</a>
+                <a href="perro.html#suplementos">Suplementos</a>
+                <a href="perro.html#juguetes">Juguetes y Mordeores</a>
+                <a href="perro.html#moda">Moda y paseo</a>
+                <a href="perro.html#descanso">Descanso</a>
+                <a href="perro.html#higiene">Higiene</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a class="dropdown-toggle navegacion__enlace" href="gato.html">Gato</a>
+            <div class="dropdown-content">
+                <a href="gato.html#alimentacion">Alimentación</a>
+                <a href="gato.html#juguetes">Juguetes y Rascadores</a>
+                <a href="gato.html#descanso">Descanso</a>
+                <a href="gato.html#higiene">Higiene</a>
+            </div>
+        </div>
+
         <a class="navegacion__enlace" href="contacto.html">Contacto</a>
     </nav>
+
     <!--CONTENIDO PRINCIPAL-->
      <main class="contenedor">
-        <h1>Inicio</h1>
+        <h1>Bienvenido a PatiGo</h1>
+        <p>Tu tienda de confianza para el cuidado de tu mascota.</p>
     </main>
 
     <footer class="footer">
         <p class="footer__texto">PatiGo - Todos los derechos Reservados 2030</p>
     </footer>
+    
+    <!-- Vinculo con Javascript-->
+    <script src="js/menu.js"></script>
+
     
 </body>
 </html>

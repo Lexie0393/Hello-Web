@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PatiGo</title>
+    <title>Perro - PatiGo</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -16,35 +16,71 @@
         </a>
     </header>
 
-    <!--tu menú de navegación aquí-->
+    <!--Igual navegación-->
     <nav class="navegacion">
         <a class="navegacion__enlace" href="index.html">Inicio</a>
-        <a class="navegacion__enlace navegacion__enlace--activo" href="perro.html">Perro</a>
-        <a class="navegacion__enlace" href="gato.html">Gato</a>
+
+         <div class="dropdown">
+            <a class="dropdown-toggle navegacion__enlace navegacion__enlace--activo" href="perro.html">Perro</a>
+            <div class="dropdown-content">
+                <a href="#alimentacion">Alimentación</a>
+                <a href="#suplementos">Suplementos</a>
+                <a href="#juguetes">Juguetes y Mordeores</a>
+                <a href="#moda">Moda y Paseo</a>
+                <a href="#descanso">Descanso</a>
+                <a href="#higiene">Higiene</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a class="dropdown-toggle navegacion__enlace" href="gato.html">Gato</a>
+            <div class="dropdown-content">
+                <a href="gato.html#alimentacion">Alimentación</a>
+                <a href="gato.html#juguetes">Juguetes y Rascadores</a>
+                <a href="gato.html#descanso">Descanso</a>
+                <a href="gato.html#higiene">Higiene</a>
+            </div>
+        </div>
+
         <a class="navegacion__enlace" href="contacto.html">Contacto</a>
     </nav>
 
     <!--CONTENIDO PRINCIPAL-->
      <main class="contenedor">
+        <h1>Productos para Perros</h1>
 
-        <!--Subpestañas-->
-        <div class="subtabs">
-            <button class="subtab" onclick="showSubTab(event, 'alimentacion')">Alimentación</button>
-            <button class="subtab" onclick="showSubTab(event, 'alimentacion')">Suplementos</button>
-            <button class="subtab" onclick="showSubTab(event, 'alimentacion')">Juguetes y Mordedores</button>
-            <button class="subtab" onclick="showSubTab(event, 'alimentacion')">Moda y Paseo</button>
-            <button class="subtab" onclick="showSubTab(event, 'alimentacion')">Higiene</button>
-            <button class="subtab" onclick="showSubTab(event, 'alimentacion')">Descanso</button>
-        </div>
-
-        <div id="contenido-subtab" class="subtab-content">
-            <!--Aquí se carga el contenido-->
-        </div>
+        <section id="alimentacion">
+            <h2>Alimentación</h2>
+            <p>Comida seca, comida húmeda, barf, snacks, caldos... Todo lo que tenemos está pensado para cuidar y mantener a nuestros peludos más sanos</p>
+        </section>
+        <section id="suplementos">
+            <h2>Suplementos</h2>
+            <p>Vitaminas y productos nutricionales.</p>
+        </section>
+        <section id="juguetes">
+            <h2>Juguetes y Mordeores</h2>
+            <p>Juguetes resistentes y entretenidos.</p>
+        </section>
+        <section id="moda">
+            <h2>Moda y Paseo</h2>
+            <p>Correas, ropa y accesorios.</p>
+        </section>
+         <section id="descanso">
+            <h2>Descanso</h2>
+            <p>Camas, mantas y más.</p>
+        </section>
+         <section id="higiene">
+            <h2>Higiene</h2>
+            <p>Shampoo, cepillos y productos de limpieza.</p>
+        </section>
     </main>
 
     <footer class="footer">
         <p class="footer__texto">PatiGo - Todos los derechos Reservados 2030</p>
     </footer>
+
+    <!-- Vinculo con Javascript-->
+    <script src="js/menu.js"></script>
     
 </body>
 </html>
