@@ -1,3 +1,4 @@
+//Para añadir funcionalidad al menú desplegable (dropdown)
 document.addEventListener("DOMContentLoaded", function() {
     const toggles = document.querySelectorAll(".dropdown-toggle");
 

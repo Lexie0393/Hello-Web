@@ -1,14 +1,20 @@
-document.addEventListener("DOMContentLoaded", function(){
-    const listaProductosDiv = document.getElementById("lista-productos");
-
-    //array productos
-    const productos = [
+//array productos
+const productos = [
         {
             id: 1,
-            nombre: "Pack Degustación Nutricione Barf",
-            precio: 59.45,
+            nombre: "Pack Degustación Nutricione Menús completos - 8 Tipos (16uds. - 500g/ud)",
+            precio: 65.84,
             imagen: "img/Pack degustación menú barf.jpeg",
-            descripcion: "",
+           descripcion: `Pack ahorro con 5% Dto.
+2 Pato | 2 Pavo | 2 Ternera | 2 Cerdo |
+2 Pollo | 2 Ciervo | 2 Pescado/Pavo | 2 Conejo.
+Elaboración propia. Todos los productos de alimentación
+cárnicos y derivados se elaboran en nuestro obrador, 
+asegurándonos una trazabilidadcorrecta y una manipulación
+de forma correcta.
+Alimento completo y equilibrado para mascotas.
+Triturado, envasado al vacio en bolsa de 500g y congelado a -18ºC.
+100% natural sin aditivos ni conservantes.`,
             categoria: "alimentacion",
             animal: "ambos"
         },
@@ -17,7 +23,12 @@ document.addEventListener("DOMContentLoaded", function(){
             nombre: "Pollo Menú Barf Nutricione",
             precio: 2.95,
             imagen: "img/Pollo Menu Barf Perro.jpeg",
-            descripcion: "",
+            descripcion: `Composición: Carcasa de Pollo 50%,
+Carne de Pollo 30%, Higaditos de Pollo 10%, Calabaza 5%, Manzana 5%. 
+Triturado, envasado al vacío en formato de 500g, y congelado a -18ºC. 
+Menú completo monoproteico perfecto para intolerancias o alergias, 
+ya que solo utilizamos carne 100% de pollo.
+100% natural sin aditivos ni conservantes`,
             categoria: "alimentacion",
             animal: "perro"
         },
@@ -40,34 +51,3 @@ document.addEventListener("DOMContentLoaded", function(){
             animal: "perro"
         },
     ];
-
-    // Detectar categoría y animal
-    const categoriaActual = document.body.getAttribute("data-categoria");
-    const animalActual = document.body.getAttribute("data-animal");
-    
-    // Filtrar productos según categoría y animal
-    const productosFiltrados = productos.filter(producto => producto.categoria === categoriaActual && (producto.animal === animalActual || producto.animal == "ambos")
-    );
-    
-    //Mostrar productos en el div#lista-productos
-    if (productosFiltrados.length === 0) {
-        listaProductosDiv.textContent = "No hay productos para mostrar.";
-    } else {
-        productosFiltrados.forEach(producto => {
-            const productoElem = document.createElement("div");
-            productoElem.classList.add("producto");
-
-            productoElem.innerHTML = `
-                <h3>${producto.nombre}</h3>
-                ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}" width="150">` : ""}
-                <p>Precio: €${producto.precio.toFixed(2)}</p>
-                <p>${producto.descripcion}</p>
-            `;
-
-            listaProductosDiv.appendChild(productoElem);
-        });
-    }
-
-
-});
-
