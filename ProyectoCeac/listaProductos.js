@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
             productoElem.innerHTML = `
                 <h3>
                     <a href="producto.html?id=${producto.id}">${producto.nombre}</a>
+                    ${producto.novedad ? '<span class="etiqueta-novedad">🆕</span>' : ''}
                 </h3>
                 ${producto.imagen ? `<a href="producto.html?id=${producto.id}">
                 <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">

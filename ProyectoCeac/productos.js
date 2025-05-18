@@ -17,7 +17,7 @@ Triturado, envasado al vacio en bolsa de 500g y congelado a -18ºC.
 100% natural sin aditivos ni conservantes.`,
             categoria: "alimentacion",
             animal: "ambos",
-            novedades: true
+            novedad: true
         },
         {
             id: 2,
@@ -32,7 +32,7 @@ ya que solo utilizamos carne 100% de pollo.
 100% natural sin aditivos ni conservantes`,
             categoria: "alimentacion",
             animal: "perro",
-            novedades: false
+            novedad: false
         },
         {
             id: 3,
@@ -42,7 +42,7 @@ ya que solo utilizamos carne 100% de pollo.
             descripcion: "",
             categoria: "alimentacion",
             animal: "perro",
-            novedades: false
+            novedad: false
         },
         {
             id: 4,
@@ -52,6 +52,6 @@ ya que solo utilizamos carne 100% de pollo.
             descripcion: "",
             categoria: "alimentacion",
             animal: "perro",
-            novedades: true
+            novedad: true
         },
     ];
