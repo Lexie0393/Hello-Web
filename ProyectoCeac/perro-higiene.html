@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Css/style.css">
 </head>
-<body>
+<body data-categoria="higiene" data-animal="perro">
     <header class="header">
         <a href="index.html">
             <img class="header__logo" src="img/LogoPatiGo.png" alt="Logotipo">
@@ -35,10 +35,10 @@
         <div class="dropdown">
             <a class="dropdown-toggle navegacion__enlace" href="gato.html">Gato</a>
             <div class="dropdown-content">
-                <a href="html/gato-alimentacion.html">Alimentación</a>
-                <a href="html/gato-juguetesyrascadores.html">Juguetes y Rascadores</a>
-                <a href="html/gato-descanso.html">Descanso</a>
-                <a href="html/gato-higiene.html">Higiene</a>
+                <a href="gato-alimentacion.html">Alimentación</a>
+                <a href="gato-juguetesyrascadores.html">Juguetes y Rascadores</a>
+                <a href="gato-descanso.html">Descanso</a>
+                <a href="gato-higiene.html">Higiene</a>
             </div>
         </div>
 
@@ -62,6 +62,8 @@
 
     <!-- Vinculo con Javascript-->
     <script src="menu.js"></script>
+    <script src="productos.js"></script> <!-- Script contiene el array de productos-->
+    <script src="listaProductos.js"></script> <!--filtra y muestra los productos -->
     
 </body>
 </html>

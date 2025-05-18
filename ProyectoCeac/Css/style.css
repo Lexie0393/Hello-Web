@@ -1,7 +1,7 @@
 :root {
     --primario:#9C27B0;
     --primarioOscuro:#89119D;
-    --secundario:#daaf07;
+    --secundario: #ffce00;
     --secundarioOscuro: rgb(233,287,2);
     --blanco:#FFF;
     --negro:#000;
@@ -12,6 +12,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -87,6 +88,9 @@ h3 {
     color: var(--blanco);
     font-size: 3rem;
 }
+.navegacion__enlace:focus {
+  outline: 2px dashed var(--secundario);
+}
 .navegacion__enlace:last-of-type {
     margin-right: 0;
 }
@@ -107,7 +111,7 @@ h3 {
     left: 0;
     background-color: var(--primario);
     min-width: 200px;
-    box-shadow: var(--primario);
+    box-shadow: 0 4px 10 px var(--primario);
     z-index: 1000;
     flex-direction: column;
 }
@@ -133,4 +137,246 @@ h3 {
 /*Mostrar en movil con clase activa*/
 .dropdown-content.show {
     display: block;
+}
+
+/*Estilos Perro*/
+body[data-categoria="alimentacion"][data-animal="perro"],
+body[data-categoria="suplementos"][data-animal="perro"],
+body[data-categoria="modaypaseo"][data-animal="perro"],
+body[data-categoria="juguetesymordedores"][data-animal="perro"],
+body[data-categoria="descanso"][data-animal="perro"],
+body[data-categoria="higiene"][data-animal="perro"] {
+    background-color: var(--primario);
+}
+
+body[data-categoria="alimentacion"][data-animal="perro"] .producto,
+body[data-categoria="suplementos"][data-animal="perro"] .producto,
+body[data-categoria="modaypaseo"][data-animal="perro"] .producto,
+body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto,
+body[data-categoria="descanso"][data-animal="perro"] .producto,
+body[data-categoria="higiene"][data-animal="perro"] .producto {
+    border: 3px solid var(--primario);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--blanco);
+    margin-bottom: 2.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+    overflow: hidden;
+    position: relative;
+}
+
+body[data-categoria="alimentacion"][data-animal="perro"] .producto img,
+body[data-categoria="suplementos"][data-animal="perro"] .producto img,
+body[data-categoria="modaypaseo"][data-animal="perro"] .producto img,
+body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto img,
+body[data-categoria="descanso"][data-animal="perro"] .producto img,
+body[data-categoria="higiene"][data-animal="perro"] .producto img {
+    transform: translate(-8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.producto-imagen {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin:  0 auto;
+    transition: transform 0.3s ease;
+}
+
+.producto-imagen:hover {
+    transform: scale(1.05);
+}
+
+#lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+
+body[data-categoria="alimentacion"][data-animal="perro"] .producto img:hover,
+body[data-categoria="suplementos"][data-animal="perro"] .producto img:hover,
+body[data-categoria="modaypaseo"][data-animal="perro"] .producto img:hover,
+body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto img:hover,
+body[data-categoria="descanso"][data-animal="perro"] .producto img:hover,
+body[data-categoria="higiene"][data-animal="perro"] .producto img:hover {
+    opacity: 0.95;
+    transform:scale(1.03);
+}
+
+body[data-categoria="alimentacion"][data-animal="perro"] .producto h3 a,
+body[data-categoria="suplementos"][data-animal="perro"] .producto h3 a,
+body[data-categoria="modaypaseo"][data-animal="perro"] .producto h3 a,
+body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto h3 a,
+body[data-categoria="descanso"][data-animal="perro"] .producto h3 a,
+body[data-categoria="higiene"][data-animal="perro"] .producto h3 a {
+    font-size: 2.2rem;
+    color: var(--primarioOscuro);
+    margin: 1rem 0 0.5rem 0;
+    font-family: var(--fuentePrincipal);
+}
+
+body[data-categoria="alimentacion"][data-animal="perro"] .producto p, 
+body[data-categoria="suplementos"][data-animal="perro"] .producto p,
+body[data-categoria="modaypaseo"][data-animal="perro"] .producto p ,
+body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto p,
+body[data-categoria="descanso"][data-animal="perro"] .producto p,
+body[data-categoria="higiene"][data-animal="perro"] .producto p {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+    color: var(--negro);
+}
+
+body[data-categoria="alimentacion"][data-animal="perro"] .producto .precio,
+body[data-categoria="suplementos"][data-animal="perro"] .producto .precio,
+body[data-categoria="modaypaseo"][data-animal="perro"] .producto .precio,
+body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto .precio,
+body[data-categoria="descanso"][data-animal="perro"] .producto .precio,
+body[data-categoria="higiene"][data-animal="perro"] .producto .precio {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secundario);
+    margin-top: 1rem;
+}
+
+/*Animación sutil*/
+@keyframes brilla {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 25px var(--secundario);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+body[data-categoria="alimentacion"][data-animal="perro"] .producto.destacado,
+body[data-categoria="suplementos"][data-animal="perro"] .producto.destacado,
+body[data-categoria="modaypaseo"][data-animal="perro"] .producto.destacado,
+body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto.destacado,
+body[data-categoria="descanso"][data-animal="perro"] .producto.destacado,
+body[data-categoria="higiene"][data-animal="perro"] .producto.destacado {
+    animation: brilla 2s infinite;
+}
+
+/*Estilos Gato*/
+body[data-categoria="alimentacion"][data-animal="gato"],
+body[data-categoria="juguetesyrascadores"][data-animal="gato"],
+body[data-categoria="descanso"][data-animal="gato"],
+body[data-categoria="higiene"][data-animal="gato"] {
+    background-color: var(--primario);
+}
+
+body[data-categoria="alimentacion"][data-animal="gato"] .producto,
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto,
+body[data-categoria="descanso"][data-animal="gato"] .producto,
+body[data-categoria="higiene"][data-animal="gato"] .producto {
+    border: 3px solid var(--primario);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--blanco);
+    margin-bottom: 2.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+    overflow: hidden;
+    position: relative;
+}
+
+body[data-categoria="alimentacion"][data-animal="gatoo"] .producto img,
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto img,
+body[data-categoria="descanso"][data-animal="gato"] .producto img,
+body[data-categoria="higiene"][data-animal="gato"] .producto img {
+    transform: translate(-8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.producto-imagen {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin:  0 auto;
+    transition: transform 0.3s ease;
+}
+
+.producto-imagen:hover {
+    transform: scale(1.05);
+}
+
+#lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+
+body[data-categoria="alimentacion"][data-animal="gato"] .producto img:hover,
+body[data-categoria="juguetesyrascadores"][data-animal="gatoo"] .producto img:hover,
+body[data-categoria="descanso"][data-animal="gato"] .producto img:hover,
+body[data-categoria="higiene"][data-animal="gato"] .producto img:hover {
+    opacity: 0.95;
+    transform:scale(1.03);
+}
+
+body[data-categoria="alimentacion"][data-animal="gato"] .producto h3 a,
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto h3 a,
+body[data-categoria="descanso"][data-animal="gato"] .producto h3 a,
+body[data-categoria="higiene"][data-animal="gato"] .producto h3 a {
+    font-size: 2.2rem;
+    color: var(--primarioOscuro);
+    margin: 1rem 0 0.5rem 0;
+    font-family: var(--fuentePrincipal);
+}
+
+body[data-categoria="alimentacion"][data-animal="gato"] .producto p, 
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto p,
+body[data-categoria="descanso"][data-animal="gato"] .producto p,
+body[data-categoria="higiene"][data-animal="gato"] .producto p {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+    color: var(--negro);
+}
+
+body[data-categoria="alimentacion"][data-animal="gato"] .producto .precio,
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto .precio,
+body[data-categoria="descanso"][data-animal="gato"] .producto .precio,
+body[data-categoria="higiene"][data-animal="gato"] .producto .precio {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secundario);
+    margin-top: 1rem;
+}
+
+/*Animación sutil*/
+@keyframes brilla {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 25px var(--secundario);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+body[data-categoria="alimentacion"][data-animal="gato"] .producto.destacado,
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto.producto.destacado,
+body[data-categoria="descanso"][data-animal="gato"] .producto.producto.destacado,
+body[data-categoria="higiene"][data-animal="gato"] .producto.producto.destacado {
+    animation: brilla 2s infinite;
 }

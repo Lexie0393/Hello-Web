@@ -23,8 +23,10 @@ document.addEventListener("DOMContentLoaded", function(){
                 <h3>
                     <a href="producto.html?id=${producto.id}">${producto.nombre}</a>
                 </h3>
-                ${producto.imagen ? `<a href="producto.html?id=${producto.id}"><img src="${producto.imagen}" alt="${producto.nombre}" width="150"></a>` : ""}
-                <p>Precio: €${producto.precio.toFixed(2)}</p>
+                ${producto.imagen ? `<a href="producto.html?id=${producto.id}">
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">
+                </a>` : ""}
+                <p class="producto-precio">€${producto.precio.toFixed(2)}</p>
             `;
 
             listaProductosDiv.appendChild(productoElem);
