@@ -2,10 +2,9 @@
     --primario:#9C27B0;
     --primarioOscuro:#89119D;
     --secundario: #ffce00;
-    --secundarioOscuro: rgb(233,287,2);
+    --secundarioOscuro: rgb(233,187,2);
     --blanco:#FFF;
     --negro:#000;
-
     --fuentePrincipal: "Staatliches", sans-serif;
 }
 
@@ -34,27 +33,23 @@ a {
     text-decoration: none;
 }
 img {
-    width: 100%;
-    height: 20rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
-.contenedor{
+.contenedor {
     max-width: 120rem;
     margin: 0 auto;
 }
+
 h1, h2, h3 {
     text-align: center;
     color: var(--secundario);
     font-family: var(--fuentePrincipal);
 }
-h1 {
-    font-size: 4rem;
-}
-h2 {
-    font-size: 3.2rem;
-}
-h3 {
-    font-size: 2.4rem;
-}
+h1 { font-size: 4rem; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.4rem; }
 
 /** Header **/
 .header {
@@ -63,6 +58,8 @@ h3 {
 }
 .header__logo {
     margin: 3rem 0;
+    width: 100%;
+    height: 20rem;
 }
 /** Footer **/
 .footer {
@@ -75,7 +72,7 @@ h3 {
     text-align: center;
     font-size: 2.2rem;
 }
-/**NAvegacion**/
+/**Navegacion**/
 .navegacion{
     background-color: var(--primarioOscuro);
     padding: 1rem 0;
@@ -164,7 +161,7 @@ h3 {
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
-    transition: trnasfrom 0.3s, box-shadow 0.3s;
+    transition: transfrom 0.3s, box-shadow 0.3s;
 }
 .novedad:hover {
     transform: scale(1.03);
@@ -181,6 +178,18 @@ h3 {
     font-size: 1.6rem;
 }
 
+/*Animación sutil*/
+@keyframes brilla {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 25px var(--secundario);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
 
 /*Estilos Perro*/
 body[data-categoria="alimentacion"][data-animal="perro"],
@@ -289,19 +298,6 @@ body[data-categoria="higiene"][data-animal="perro"] .producto .precio {
     margin-top: 1rem;
 }
 
-/*Animación sutil*/
-@keyframes brilla {
-    0% {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-    50% {
-        box-shadow: 0 0 25px var(--secundario);
-    }
-    100% {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
 body[data-categoria="alimentacion"][data-animal="perro"] .producto.destacado,
 body[data-categoria="suplementos"][data-animal="perro"] .producto.destacado,
 body[data-categoria="modaypaseo"][data-animal="perro"] .producto.destacado,
@@ -335,7 +331,7 @@ body[data-categoria="higiene"][data-animal="gato"] .producto {
     position: relative;
 }
 
-body[data-categoria="alimentacion"][data-animal="gatoo"] .producto img,
+body[data-categoria="alimentacion"][data-animal="gato"] .producto img,
 body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto img,
 body[data-categoria="descanso"][data-animal="gato"] .producto img,
 body[data-categoria="higiene"][data-animal="gato"] .producto img {
@@ -368,7 +364,7 @@ body[data-categoria="higiene"][data-animal="gato"] .producto img {
 
 
 body[data-categoria="alimentacion"][data-animal="gato"] .producto img:hover,
-body[data-categoria="juguetesyrascadores"][data-animal="gatoo"] .producto img:hover,
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto img:hover,
 body[data-categoria="descanso"][data-animal="gato"] .producto img:hover,
 body[data-categoria="higiene"][data-animal="gato"] .producto img:hover {
     opacity: 0.95;
@@ -404,22 +400,9 @@ body[data-categoria="higiene"][data-animal="gato"] .producto .precio {
     margin-top: 1rem;
 }
 
-/*Animación sutil*/
-@keyframes brilla {
-    0% {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-    50% {
-        box-shadow: 0 0 25px var(--secundario);
-    }
-    100% {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
 body[data-categoria="alimentacion"][data-animal="gato"] .producto.destacado,
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto.producto.destacado,
-body[data-categoria="descanso"][data-animal="gato"] .producto.producto.destacado,
-body[data-categoria="higiene"][data-animal="gato"] .producto.producto.destacado {
+body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto.destacado,
+body[data-categoria="descanso"][data-animal="gato"] .producto.destacado,
+body[data-categoria="higiene"][data-animal="gato"] .producto.destacado {
     animation: brilla 2s infinite;
 }
