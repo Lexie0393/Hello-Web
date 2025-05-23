@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body data-animal="perro" data-novedad="true">
     <header class="header">
         <a href="index.html">
@@ -20,26 +22,13 @@
     <nav class="navegacion">
         <a class="navegacion__enlace" href="index.html">Inicio</a>
 
-         <div class="dropdown">
+        <div class="dropdown">
             <a class="dropdown-toggle navegacion__enlace navegacion__enlace--activo" href="perro.html">Perro</a>
-            <div class="dropdown-content">
-               <a href="perro-alimentacion.html">Alimentación</a>
-                <a href="perro-suplementos.html">Suplementos</a>
-                <a href="perro-juguetesymordedores.html">Juguetes y Mordedores</a>
-                <a href="perro-modaypaseo.html">Moda y paseo</a>
-                <a href="perro-descanso.html">Descanso</a>
-                <a href="perro-higiene.html">Higiene</a>
-            </div>
+
         </div>
 
         <div class="dropdown">
             <a class="dropdown-toggle navegacion__enlace" href="gato.html">Gato</a>
-            <div class="dropdown-content">
-                <a href="gato-alimentacion.html">Alimentación</a>
-                <a href="gato-juguetesyrascadores.html">Juguetes y Rascadores</a>
-                <a href="gato-descanso.html">Descanso</a>
-                <a href="gato-higiene.html">Higiene</a>
-            </div>
         </div>
 
         <a class="navegacion__enlace" href="contacto.html">Contacto</a>
@@ -48,17 +37,44 @@
     <!--CONTENIDO PRINCIPAL-->
     <main class="contenedor">
         <h1>Novedades</h1>
+        <p>Cuidar la alimentación de tu perro es esencial para asegurar su salud y bienestar. Es importante proporcionar
+            una dieta balanceada que incluya todos los nutrientes necesarios para su desarrollo y mantenimiento. Los
+            alimentos comerciales de alta calidad suelen ser una buena opción, ya que están formulados para satisfacer
+            las necesidades nutricionales de los perros. Sin embargo, al elegir un alimento, asegúrate de que sea
+            adecuado para la edad, tamaño y nivel de actividad de tu mascota.
+
+            Además de los alimentos secos o húmedos, también puedes considerar incluir en su dieta algunas frutas y
+            verduras seguras para perros, como zanahorias, manzanas y calabacines, siempre en cantidades moderadas.
+            Recuerda evitar alimentos dañinos como el chocolate, la cebolla y el ajo. También es fundamental
+            proporcionar suficiente agua fresca y limpia en todo momento. Consulta con un veterinario para obtener
+            recomendaciones específicas y asegurarte de que tu perro reciba una dieta óptima para su salud y felicidad.
+        </p>
         <div id="lista-productos"></div>
     </main>
 
+    <!-- Información footer -->
     <footer class="footer">
-        <p class="footer__texto">PatiGo - Todos los derechos Reservados 2030</p>
+        <div class="contacto">
+            <img src="img/LogoPatiGo.png" alt="LogoPatiGo">
+            <p>Rúa Gondomar, 4 <br> 36740 - Tomiño (Pontevedra)</p>
+            <h2>Horario</h2>
+            <p>De Lunes a Viernes - 10.00 a 14.00 / 16.00 a 20.00 <br> Sábados - 10.00 a 13.30 </p>
+            <p><a href="tel:+34986123467">986 12 34 67</a></p>
+            <p><a href="mailto: infopatigo@gmail.com">infopatigo@gmail.com</a></p>
+        </div>
+        <div class="redes">
+            <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram (1).png"
+                    alt="Ir a instagram"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook (1).png" alt="Ir a facebook"></a>
+        </div>
+        <p class="footer__texto">&copy;PatiGo - Todos los derechos Reservados 2030</p>
     </footer>
 
     <!-- Vinculo con Javascript-->
     <script src="menu.js"></script>
     <script src="productos.js"></script> <!-- Script que filtra y muestra productos-->
     <script src="listaProductos.js"></script> <!--filtra y muestra los productos -->
-    
+
 </body>
+
 </html>

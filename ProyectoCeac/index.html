@@ -1,63 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PatiGo</title>
+    <title>PatiGo - Tienda de Mascotas</title>
+    <meta name="description"
+        content="Encuentra todo lo que necesitas para tu perro y tu gato: alimentación, juguetes, paseo e higiene.">
+    <meta name="keywords" content="mascotas, perros, gatos, comida, juguetes, higiene, tienda online">
+    <meta name="author" content="PatiGo">
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header class="header">
-        <a href="index.html">
-            <img class="header__logo" src="img/LogoPatiGo.png" alt="Logotipo">
-        </a>
+        <a href="index.html"><img class="header__logo" src="img/LogoPatiGo.png" alt="Logotipo"></a>
+        <!--tu menú de navegación aquí-->
+        <nav class="navegacion">
+            <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Inicio</a>
+
+            <div class="dropdown">
+                <a class="dropdown-toggle navegacion__enlace" href="perro.html" aria-expanded="false">Perro</a>
+                <ul class="dropdown-menu">
+                    <li><a href="perro-comida.html">Comida</a></li>
+                    <li><a href="perro-juguetes.html">Juguetes</a></li>
+                    <li><a href="perro-paseo.html">Paseo</a></li>
+                    <li><a href="perro-higiene.html">Higiene</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a class="dropdown-toggle navegacion__enlace" href="gato.html" aria-expanded="false">Gato</a>
+                <ul class="dropdown-menu">
+                    <li><a href="gato-comida.html">Comida</a></li>
+                    <li><a href="gato-juguetes.html">Juguetes</a></li>
+                    <li><a href="gato-descanso.html">Descanso</a></li>
+                    <li><a href="gato-higiene.html">Higiene</a></li>
+                </ul>
+            </div>
+
+            <a class="navegacion__enlace" href="contacto.html">Contacto</a>
+
+            <div class="Buscador">
+                <input type="text" placeholder="Buscar..." aria-label="Buscar productos"> <!-- Buscador -->
+                <button class="usuario" aria-label="Perfil de usuario">👤</button> <!-- Botón Usuario -->
+                <button class="Carrito" aria-label="Carrito de compras">🛒</button><!-- Botón Carrito -->
+            </div>
+        </nav>
     </header>
- <!--tu menú de navegación aquí-->
-    <nav class="navegacion">
-        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Inicio</a>
-        
-        <div class="dropdown">
-            <a class="dropdown-toggle navegacion__enlace" href="perro.html">Perro</a>
-            <div class="dropdown-content">
-                <a href="perro-alimentacion.html">Alimentación</a>
-                <a href="perro-suplementos.html">Suplementos</a>
-                <a href="perro-juguetesymordedores.html">Juguetes y Mordeores</a>
-                <a href="perro-modaypaseo.html">Moda y paseo</a>
-                <a href="perro-descanso.html">Descanso</a>
-                <a href="perro-higiene.html">Higiene</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <a class="dropdown-toggle navegacion__enlace" href="gato.html">Gato</a>
-            <div class="dropdown-content">
-                <a href="gato-alimentacion.html">Alimentación</a>
-                <a href="gato-juguetesyrascadores.html">Juguetes y Rascadores</a>
-                <a href="gato-descanso.html">Descanso</a>
-                <a href="gato-higiene.html">Higiene</a>
-            </div>
-        </div>
-
-        <a class="navegacion__enlace" href="contacto.html">Contacto</a>
-    </nav>
 
     <!--CONTENIDO PRINCIPAL-->
-     <main class="contenedor">
-        <h1>Bienvenido a PatiGo</h1>
-        <p>Tu tienda de confianza para el cuidado de tu mascota.</p>
-    </main>
-
+    <div class="grid">
+        <div class="poster">
+            <img class="poster" src="img/Banner web comida de perros negro.png" alt="imagen poster">
+        </div>
+    </div>
+    <div class="contenedor-doble">
+        <div class="video">
+            <video src="img/219661_tiny.mp4" autoplay loop>Humana con perros</video>
+        </div>
+        <div class="imagenes-laterales">
+            <h1>¿Qué necesitas?</h1>
+            <a href="perro.html"><img src="img/Aliment DULE.png" alt="Perro recostado para sección de alimentación canina"></a>
+            <a href="gato.html"><img src="img/Alimentación para Gatos.png" alt="Gato naranja para sección de alimentación felina"></a>
+        </div>
+    </div>
+    <!-- Información footer -->
     <footer class="footer">
-        <p class="footer__texto">PatiGo - Todos los derechos Reservados 2030</p>
+        <div class="contacto">
+            <img src="img/LogoPatiGo.png" alt="LogoPatiGo">
+            <p>Rúa Gondomar, 4 <br> 36740 - Tomiño (Pontevedra)</p>
+            <h2>Horario</h2>
+            <p>De Lunes a Viernes - 10.00 a 14.00 / 16.00 a 20.00 <br> Sábados - 10.00 a 13.30 </p>
+            <p><a href="tel:+34986123467">986 12 34 67</a></p>
+            <p><a href="mailto: infopatigo@gmail.com">infopatigo@gmail.com</a></p>
+
+
+        </div>
+        <div class="redes">
+            <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram (1).png"
+                    alt="Ir a instagram"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook (1).png" alt="Ir a facebook"></a>
+        </div>
+
+        <p class="footer__texto">&copy;PatiGo - Todos los derechos Reservados 2030</p>
     </footer>
-    
+
     <!-- Vinculo con Javascript-->
     <script src="menu.js"></script>
     <script src="productos.js"></script> <!-- Script contiene array productos-->
 
-    
+
 </body>
+
 </html>

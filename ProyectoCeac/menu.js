@@ -14,11 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Cerrar al tocar fuera
-    document.addEventListener("click", function(e){
-        if (window.innerWidth < 768 && !e.target.closet(".dropdown")) {
-            document.querySelectorAll(".dropdown-content").forEach(function(el) {
-                el.classList.remove("show");
-            });
-        }
-    });
+    toggle.addEventListener("click", function(e){
+    if (window.innerWidth < 768) {
+        e.preventDefault();
+        const content = this.nextElementSibling;
+        content.classList.toggle("show");
+        
+        // Actualizar accesibilidad
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", !expanded);
+    }
+});
 });

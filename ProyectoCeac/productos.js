@@ -4,7 +4,7 @@ const productos = [
             id: 1,
             nombre: "Pack Degustación Nutricione Menús completos - 8 Tipos (16uds. - 500g/ud)",
             precio: 65.84,
-            imagen: "img/Pack degustación menú barf.jpeg",
+            imagen: "img/pack-degustacion.jpg",
            descripcion: `Pack ahorro con 5% Dto.
 2 Pato | 2 Pavo | 2 Ternera | 2 Cerdo |
 2 Pollo | 2 Ciervo | 2 Pescado/Pavo | 2 Conejo.
@@ -48,7 +48,7 @@ ya que solo utilizamos carne 100% de pollo.
             id: 4,
             nombre: "Boquerón y pavo Me",
             precio: 4.45,
-            imagen: "img/Boqueron y pavo Menu Barf Perro.jpeg",
+            imagen: "img/boqueron-pavo-500g.jpg",
             descripcion: "",
             categoria: "alimentacion",
             animal: "perro",

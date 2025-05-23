@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header class="header">
         <a href="index.html">
@@ -16,7 +18,7 @@
         </a>
     </header>
 
-<!--tu menú de navegación aquí-->
+    <!--tu menú de navegación aquí-->
     <nav class="navegacion">
         <a class="navegacion__enlace " href="index.html">Inicio</a>
 
@@ -45,19 +47,61 @@
         <a class="navegacion__enlace navegacion__enlace--activo" href="contacto.html">Contacto</a>
     </nav>
 
-     <main class="contenedor">
-        <h1>Contacto</h1>
-        <p>¿Tienes preguntas? ¡Estamos aquí para ayudarte!</p>
+    <main class="contenedor">
+        <div class="imagen_contacto"><img src="img/CONTACTO.png" alt="¿Tienes preguntas?"></div>
 
         <!--Aquí colocaremos un formulario-->
-    </main>
+        <div>
+            <h1>Formulario de Contacto</h1>
+            <form id="form-contacto">
+                <label>Nombre:</label><input type="text" id="nombre"><br>
+                <label>Email:</label><input type="email" id="email"><br>
+                <label>Mensaje:</label><textarea id="mensaje"></textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <!-- Información footer -->
+        <footer class="footer">
+            <div class="contacto">
+                <img src="img/LogoPatiGo.png" alt="LogoPatiGo">
+                <p>Rúa Gondomar, 4 <br> 36740 - Tomiño (Pontevedra)</p>
+                <h2>Horario</h2>
+                <p>De Lunes a Viernes - 10.00 a 14.00 / 16.00 a 20.00 <br> Sábados - 10.00 a 13.30 </p>
+                <p><a href="tel:+34986123467">986 12 34 67</a></p>
+                <p><a href="mailto: infopatigo@gmail.com">infopatigo@gmail.com</a></p>
 
-    <footer class="footer">
-        <p class="footer__texto">PatiGo - Todos los derechos Reservados 2030</p>
-    </footer>
-    
+
+            </div>
+            <div class="redes">
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram (1).png"
+                        alt="Ir a instagram"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook (1).png"
+                        alt="Ir a facebook"></a>
+            </div>
+
+            <p class="footer__texto">&copy;PatiGo - Todos los derechos Reservados 2030</p>
+        </footer>
+        <script>
+            document.getElementById("form-contacto").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const nombre = document.getElementById("nombre").value;
+                const email = document.getElementById("email").value;
+                const mensaje = document.getElementById("mensaje").value;
+
+                if (nombre === "" || email === "" || mensaje === "") {
+                    alert("Por favor, completa todos los campos.");
+                    return;
+                }
+
+                alert("Mensaje enviado correctamente.");
+                this.reset();
+            });
+        </script>
+    </main>
     <!-- Vinculo con Javascript-->
     <script src="js/menu.js"></script>
 
 </body>
+
+
 </html>

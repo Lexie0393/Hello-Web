@@ -61,26 +61,28 @@ h3 { font-size: 2.4rem; }
     width: 100%;
     height: 20rem;
 }
+
 /** Footer **/
 .footer {
     background-color: var(--primarioOscuro);
     padding: 1rem 0;
     margin-top: 2rem;
 }
-.footer__texto {
+.footer__contacto {
     font-family: var(--fuentePrincipal);
     text-align: center;
     font-size: 2.2rem;
 }
-/**Navegacion**/
-.navegacion{
+
+/** Navegacion **/
+.navegacion {
     background-color: var(--primarioOscuro);
     padding: 1rem 0;
     display: flex;
     justify-content: center;
-    gap: 2rem; /** Separación pestañas**/
+    gap: 2rem;
 }
-.navegacion__enlace{
+.navegacion__enlace {
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
     font-size: 3rem;
@@ -95,141 +97,50 @@ h3 { font-size: 2.4rem; }
 .navegacion__enlace:hover {
     color: var(--secundario);
 }
-/* Contenedor del dropdown*/
+
+/* Dropdown */
 .dropdown {
     position: relative;
+    display: inline-block;
 }
-
-/* Oculta las pestañas por defecto*/
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--primario);
-    min-width: 200px;
-    box-shadow: 0 4px 10 px var(--primario);
-    z-index: 1000;
-    flex-direction: column;
+.dropdown-menu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
-
+.dropdown-menu li {
+    padding: 8px 12px;
+    list-style: none;
+}
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #f0ebeb;
+    display: block;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 .dropdown-content a {
     display: block;
     padding: 0.75rem 1rem;
     color: var(--secundario);
     text-decoration: none;
 }
-
 .dropdown-content a:hover {
     background-color: var(--primarioOscuro);
 }
-
-/*Mostrar en escritorio con hover*/
 @media (min-width: 768px) {
     .dropdown:hover .dropdown-content {
         display: block;
     }
 }
-
-/*Mostrar en movil con clase activa*/
-.dropdown-content.show {
-    display: block;
+.dropdown-menu.show {
+    max-height: 300px;
+    opacity: 1;
 }
 
-/*Sección Novedades*/
-.novedades {
-    background-color: var(--blanco);
-    padding: 4rem 2rem;
-    border-radius: 2rem;
-    margin: 4rem auto;
-    max-width: 120rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-.novedades h1 {
-    font-size: 3rem;
-    color: var(--primarioOscuro);
-    margin-bottom: 3rem;
-}
-.novedades__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-.novedad {
-    background-color: var(--blanco);
-    border: 2px solid var(--primario);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: transfrom 0.3s, box-shadow 0.3s;
-}
-.novedad:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-.novedad h3 {
-    font-size: 2.2rem;
-    color: var(--primarioOscuro);
-    margin-bottom: 1rem;
-}
-
-.novedad p {
-    color: var(--negro);
-    font-size: 1.6rem;
-}
-
-/*Animación sutil*/
-@keyframes brilla {
-    0% {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-    50% {
-        box-shadow: 0 0 25px var(--secundario);
-    }
-    100% {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-/*Estilos Perro*/
-body[data-categoria="alimentacion"][data-animal="perro"],
-body[data-categoria="suplementos"][data-animal="perro"],
-body[data-categoria="modaypaseo"][data-animal="perro"],
-body[data-categoria="juguetesymordedores"][data-animal="perro"],
-body[data-categoria="descanso"][data-animal="perro"],
-body[data-categoria="higiene"][data-animal="perro"] {
-    background-color: var(--primario);
-}
-
-body[data-categoria="alimentacion"][data-animal="perro"] .producto,
-body[data-categoria="suplementos"][data-animal="perro"] .producto,
-body[data-categoria="modaypaseo"][data-animal="perro"] .producto,
-body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto,
-body[data-categoria="descanso"][data-animal="perro"] .producto,
-body[data-categoria="higiene"][data-animal="perro"] .producto {
-    border: 3px solid var(--primario);
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    background-color: var(--blanco);
-    margin-bottom: 2.5rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    text-align: center;
-    transition: transform 0.4s, box-shadow 0.4s;
-    overflow: hidden;
-    position: relative;
-}
-
-body[data-categoria="alimentacion"][data-animal="perro"] .producto img,
-body[data-categoria="suplementos"][data-animal="perro"] .producto img,
-body[data-categoria="modaypaseo"][data-animal="perro"] .producto img,
-body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto img,
-body[data-categoria="descanso"][data-animal="perro"] .producto img,
-body[data-categoria="higiene"][data-animal="perro"] .producto img {
-    transform: translate(-8px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    transition: opacity 0.3s, transform 0.3s;
-}
-
+/* Productos */
 .producto-imagen {
     width: 100%;
     max-width: 300px;
@@ -240,11 +151,9 @@ body[data-categoria="higiene"][data-animal="perro"] .producto img {
     margin:  0 auto;
     transition: transform 0.3s ease;
 }
-
 .producto-imagen:hover {
     transform: scale(1.05);
 }
-
 #lista-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -252,157 +161,27 @@ body[data-categoria="higiene"][data-animal="perro"] .producto img {
     padding: 2rem;
 }
 
-
-body[data-categoria="alimentacion"][data-animal="perro"] .producto img:hover,
-body[data-categoria="suplementos"][data-animal="perro"] .producto img:hover,
-body[data-categoria="modaypaseo"][data-animal="perro"] .producto img:hover,
-body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto img:hover,
-body[data-categoria="descanso"][data-animal="perro"] .producto img:hover,
-body[data-categoria="higiene"][data-animal="perro"] .producto img:hover {
-    opacity: 0.95;
-    transform:scale(1.03);
+/** NUEVO BLOQUE AÑADIDO **/
+.contenedor-doble {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: flex-start;
+    justify-content: center;
 }
-
-body[data-categoria="alimentacion"][data-animal="perro"] .producto h3 a,
-body[data-categoria="suplementos"][data-animal="perro"] .producto h3 a,
-body[data-categoria="modaypaseo"][data-animal="perro"] .producto h3 a,
-body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto h3 a,
-body[data-categoria="descanso"][data-animal="perro"] .producto h3 a,
-body[data-categoria="higiene"][data-animal="perro"] .producto h3 a {
-    font-size: 2.2rem;
-    color: var(--primarioOscuro);
-    margin: 1rem 0 0.5rem 0;
-    font-family: var(--fuentePrincipal);
+.video {
+    flex: 1 1 60%;
+    max-width: 60rem;
 }
-
-body[data-categoria="alimentacion"][data-animal="perro"] .producto p, 
-body[data-categoria="suplementos"][data-animal="perro"] .producto p,
-body[data-categoria="modaypaseo"][data-animal="perro"] .producto p ,
-body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto p,
-body[data-categoria="descanso"][data-animal="perro"] .producto p,
-body[data-categoria="higiene"][data-animal="perro"] .producto p {
-    font-size: 1.6rem;
-    margin: 0.5rem 0;
-    color: var(--negro);
+.imagenes-laterales {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
-
-body[data-categoria="alimentacion"][data-animal="perro"] .producto .precio,
-body[data-categoria="suplementos"][data-animal="perro"] .producto .precio,
-body[data-categoria="modaypaseo"][data-animal="perro"] .producto .precio,
-body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto .precio,
-body[data-categoria="descanso"][data-animal="perro"] .producto .precio,
-body[data-categoria="higiene"][data-animal="perro"] .producto .precio {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--secundario);
-    margin-top: 1rem;
-}
-
-body[data-categoria="alimentacion"][data-animal="perro"] .producto.destacado,
-body[data-categoria="suplementos"][data-animal="perro"] .producto.destacado,
-body[data-categoria="modaypaseo"][data-animal="perro"] .producto.destacado,
-body[data-categoria="juguetesymordedores"][data-animal="perro"] .producto.destacado,
-body[data-categoria="descanso"][data-animal="perro"] .producto.destacado,
-body[data-categoria="higiene"][data-animal="perro"] .producto.destacado {
-    animation: brilla 2s infinite;
-}
-
-/*Estilos Gato*/
-body[data-categoria="alimentacion"][data-animal="gato"],
-body[data-categoria="juguetesyrascadores"][data-animal="gato"],
-body[data-categoria="descanso"][data-animal="gato"],
-body[data-categoria="higiene"][data-animal="gato"] {
-    background-color: var(--primario);
-}
-
-body[data-categoria="alimentacion"][data-animal="gato"] .producto,
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto,
-body[data-categoria="descanso"][data-animal="gato"] .producto,
-body[data-categoria="higiene"][data-animal="gato"] .producto {
-    border: 3px solid var(--primario);
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    background-color: var(--blanco);
-    margin-bottom: 2.5rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    text-align: center;
-    transition: transform 0.4s, box-shadow 0.4s;
-    overflow: hidden;
-    position: relative;
-}
-
-body[data-categoria="alimentacion"][data-animal="gato"] .producto img,
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto img,
-body[data-categoria="descanso"][data-animal="gato"] .producto img,
-body[data-categoria="higiene"][data-animal="gato"] .producto img {
-    transform: translate(-8px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.producto-imagen {
+.imagenes-laterales img {
     width: 100%;
-    max-width: 300px;
-    height: auto;
     border-radius: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    display: block;
-    margin:  0 auto;
-    transition: transform 0.3s ease;
-}
-
-.producto-imagen:hover {
-    transform: scale(1.05);
-}
-
-#lista-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-
-body[data-categoria="alimentacion"][data-animal="gato"] .producto img:hover,
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto img:hover,
-body[data-categoria="descanso"][data-animal="gato"] .producto img:hover,
-body[data-categoria="higiene"][data-animal="gato"] .producto img:hover {
-    opacity: 0.95;
-    transform:scale(1.03);
-}
-
-body[data-categoria="alimentacion"][data-animal="gato"] .producto h3 a,
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto h3 a,
-body[data-categoria="descanso"][data-animal="gato"] .producto h3 a,
-body[data-categoria="higiene"][data-animal="gato"] .producto h3 a {
-    font-size: 2.2rem;
-    color: var(--primarioOscuro);
-    margin: 1rem 0 0.5rem 0;
-    font-family: var(--fuentePrincipal);
-}
-
-body[data-categoria="alimentacion"][data-animal="gato"] .producto p, 
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto p,
-body[data-categoria="descanso"][data-animal="gato"] .producto p,
-body[data-categoria="higiene"][data-animal="gato"] .producto p {
-    font-size: 1.6rem;
-    margin: 0.5rem 0;
-    color: var(--negro);
-}
-
-body[data-categoria="alimentacion"][data-animal="gato"] .producto .precio,
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto .precio,
-body[data-categoria="descanso"][data-animal="gato"] .producto .precio,
-body[data-categoria="higiene"][data-animal="gato"] .producto .precio {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--secundario);
-    margin-top: 1rem;
-}
-
-body[data-categoria="alimentacion"][data-animal="gato"] .producto.destacado,
-body[data-categoria="juguetesyrascadores"][data-animal="gato"] .producto.destacado,
-body[data-categoria="descanso"][data-animal="gato"] .producto.destacado,
-body[data-categoria="higiene"][data-animal="gato"] .producto.destacado {
-    animation: brilla 2s infinite;
 }
