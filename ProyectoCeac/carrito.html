@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PatiGo! - Tienda Online de Mascotas | Productos para Perros y Gatos</title>
+    <title>Carrito de Compras - PatiGo!</title>
     <meta name="description"
         content="Descubre la mejor selección de productos para tu perro y gato en PatiGo. Alimentación, juguetes, paseo e higiene. Envío gratuito para compras superiores a 75€ y garantía de calidad.">
     <meta name="keywords"
@@ -68,44 +68,51 @@
         </div>
     </header>
 
-    <main class="contenido-principal" role="main">
-        <section class="hero" aria-label="Banner promocional">
-            <img class="hero__banner" src="img/Otras/Banner web comida de perros negro.png"
-                alt="Banner promocional - Comida premium para perros con descuentos especiales" loading="eager">
-        </section>
+    <main class="contenido-principal container mx-auto px-4" role="main">
+        <h1 class="font-staatliches text-center my-6">Carrito de Compras</h1>
 
-        <div class="container mx-auto px-4">
-            <section class="presentacion contenedor-doble" aria-label="Presentación de productos">
-                <div class="video-container">
-                    <video controls playsinline webkit-playsinline muted preload="metadata"
-                        aria-label="Video promocional mostrando la conexión especial entre humanos y mascotas">
-                        <source src="img/Otras/219661_tiny.mp4" type="video/mp4">
-                        <p>Tu navegador no soporta la reproducción de video.
-                            <a href="img/Otras/219661_tiny.mp4">Descargar video</a>
-                        </p>
-                    </video>
+        <div class="carrito-container">
+            <div class="carrito-productos">
+                <div class="carrito-item">
+                    <img src="img/productos/producto-ejemplo.jpg" alt="Producto" class="carrito-item-imagen">
+                    <div class="carrito-item-info">
+                        <h3>Nombre del Producto</h3>
+                        <p class="carrito-item-precio">29.99€</p>
+                    </div>
+                    <div class="carrito-item-cantidad">
+                        <button class="btn-cantidad" aria-label="Reducir cantidad">-</button>
+                        <input type="number" value="1" min="1" aria-label="Cantidad">
+                        <button class="btn-cantidad" aria-label="Aumentar cantidad">+</button>
+                    </div>
+                    <button class="btn-eliminar" aria-label="Eliminar producto">×</button>
                 </div>
 
-                <aside class="imagenes-laterales" aria-label="Categorías de productos">
-                    <h1 class="font-staatliches">¿Qué necesitas para tu mascota?</h1>
-                    <div class="opciones-mascota">
-                        <a href="perro.html" class="opcion-mascota"
-                            aria-label="Explorar productos para perros - alimentación, juguetes y más">
-                            <img src="img/Otras/Aliment DULE.png"
-                                alt="Sección dedicada a productos para perros - alimentación premium y accesorios"
-                                loading="lazy">
-                            <span class="sr-only">Ver todos los productos para perros</span>
-                        </a>
-                        <a href="gato.html" class="opcion-mascota"
-                            aria-label="Explorar productos para gatos - alimentación, juguetes y más">
-                            <img src="img/Otras/Alimentación para Gatos.png"
-                                alt="Sección dedicada a productos para gatos - alimentación premium y accesorios"
-                                loading="lazy">
-                            <span class="sr-only">Ver todos los productos para gatos</span>
-                        </a>
-                    </div>
-                </aside>
-            </section>
+                <!-- Ejemplo de producto vacío -->
+                <div class="carrito-vacio">
+                    <p>Tu carrito está vacío</p>
+                    <a href="index.html" class="btn btn-primary">Ir a comprar</a>
+                </div>
+            </div>
+
+            <div class="carrito-resumen">
+                <h2>Resumen del Pedido</h2>
+                <div class="resumen-item">
+                    <span>Subtotal</span>
+                    <span>29.99€</span>
+                </div>
+                <div class="resumen-item">
+                    <span>Envío</span>
+                    <span>Gratis</span>
+                </div>
+                <div class="resumen-total">
+                    <span>Total</span>
+                    <span>29.99€</span>
+                </div>
+                <button class="btn btn-primary btn-checkout">Realizar Pedido</button>
+                <p class="envio-gratis-info">
+                    ¡Envío gratis en pedidos superiores a 75€!
+                </p>
+            </div>
         </div>
     </main>
 
@@ -114,41 +121,25 @@
             <div class="footer-content">
                 <div class="contacto">
                     <img src="img/Otras/LogoPatiGo.png" alt="Logo PatiGo" class="mb-4"
-                        style="height: 60px; width: auto;" loading="lazy">
-                    <address class="not-italic">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>
-                            Rúa Gondomar, 4<br>
-                            36740 - Tomiño (Pontevedra)
-                        </p>
-                    </address>
-
-                    <h2>Horario de Atención</h2>
-                    <p>De Lunes a Viernes: 10:00 - 14:00 / 16:00 - 20:00<br>
-                        Sábados: 10:00 - 13:30
-                    </p>
-
-                    <p><a href="tel:+34986123467" aria-label="Llamar al teléfono de PatiGo">986 12 34 67</a></p>
-                    <p><a href="mailto:infopatigo@gmail.com" aria-label="Enviar email a PatiGo">infopatigo@gmail.com</a>
-                    </p>
+                        style="height: 60px; width: auto;">
+                    <p>Rúa Gondomar, 4<br>36740 - Tomiño (Pontevedra)</p>
+                    <p>De Lunes a Viernes: 10:00 - 14:00 / 16:00 - 20:00<br>Sábados: 10:00 - 13:30</p>
+                    <p><a href="tel:+34986123467">986 12 34 67</a></p>
+                    <p><a href="mailto:infopatigo@gmail.com">infopatigo@gmail.com</a></p>
                 </div>
-
                 <div class="redes">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Seguir a PatiGo en Instagram">
-                        <img src="img/Otras/instagram (1).png" alt="Icono de Instagram" loading="lazy">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/Otras/instagram (1).png" alt="Instagram">
                     </a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Seguir a PatiGo en Facebook">
-                        <img src="img/Otras/facebook (1).png" alt="Icono de Facebook" loading="lazy">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/Otras/facebook (1).png" alt="Facebook">
                     </a>
                 </div>
             </div>
-
-            <p class="footer__texto">
-                &copy; <span id="currentYear">2024</span> PatiGo - Todos los derechos reservados
-            </p>
+            <p class="footer__texto">&copy; 2024 PatiGo - Todos los derechos reservados</p>
         </div>
     </footer>
+
     <script src="js/menu.js"></script> <!-- Enlace a Javascript todo lo relacionado al menu -->
     <script src="js/carrito.js"></script> <!-- Enlace a Javascript todo lo relacionado al menu -->
 </body>

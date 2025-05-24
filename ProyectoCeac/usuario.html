@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PatiGo! - Tienda Online de Mascotas | Productos para Perros y Gatos</title>
+    <title>Mi Perfil - PatiGo!</title>
     <meta name="description"
         content="Descubre la mejor selección de productos para tu perro y gato en PatiGo. Alimentación, juguetes, paseo e higiene. Envío gratuito para compras superiores a 75€ y garantía de calidad.">
     <meta name="keywords"
@@ -68,44 +68,47 @@
         </div>
     </header>
 
-    <main class="contenido-principal" role="main">
-        <section class="hero" aria-label="Banner promocional">
-            <img class="hero__banner" src="img/Otras/Banner web comida de perros negro.png"
-                alt="Banner promocional - Comida premium para perros con descuentos especiales" loading="eager">
-        </section>
+    <main class="contenido-principal container mx-auto px-4" role="main">
+        <h1 class="font-staatliches text-center my-6">Mi Perfil</h1>
 
-        <div class="container mx-auto px-4">
-            <section class="presentacion contenedor-doble" aria-label="Presentación de productos">
-                <div class="video-container">
-                    <video controls playsinline webkit-playsinline muted preload="metadata"
-                        aria-label="Video promocional mostrando la conexión especial entre humanos y mascotas">
-                        <source src="img/Otras/219661_tiny.mp4" type="video/mp4">
-                        <p>Tu navegador no soporta la reproducción de video.
-                            <a href="img/Otras/219661_tiny.mp4">Descargar video</a>
-                        </p>
-                    </video>
+        <div class="perfil-container">
+            <div class="perfil-sidebar">
+                <div class="perfil-info">
+                    <img src="img/Otras/default-avatar.png" alt="Foto de perfil" class="perfil-avatar">
+                    <h2 class="perfil-nombre">Bienvenido/a</h2>
                 </div>
+                <nav class="perfil-menu">
+                    <a href="#datos" class="perfil-menu-item active">Mis Datos</a>
+                    <a href="#pedidos" class="perfil-menu-item">Mis Pedidos</a>
+                    <a href="#direcciones" class="perfil-menu-item">Mis Direcciones</a>
+                    <a href="#mascotas" class="perfil-menu-item">Mis Mascotas</a>
+                </nav>
+            </div>
 
-                <aside class="imagenes-laterales" aria-label="Categorías de productos">
-                    <h1 class="font-staatliches">¿Qué necesitas para tu mascota?</h1>
-                    <div class="opciones-mascota">
-                        <a href="perro.html" class="opcion-mascota"
-                            aria-label="Explorar productos para perros - alimentación, juguetes y más">
-                            <img src="img/Otras/Aliment DULE.png"
-                                alt="Sección dedicada a productos para perros - alimentación premium y accesorios"
-                                loading="lazy">
-                            <span class="sr-only">Ver todos los productos para perros</span>
-                        </a>
-                        <a href="gato.html" class="opcion-mascota"
-                            aria-label="Explorar productos para gatos - alimentación, juguetes y más">
-                            <img src="img/Otras/Alimentación para Gatos.png"
-                                alt="Sección dedicada a productos para gatos - alimentación premium y accesorios"
-                                loading="lazy">
-                            <span class="sr-only">Ver todos los productos para gatos</span>
-                        </a>
-                    </div>
-                </aside>
-            </section>
+            <div class="perfil-content">
+                <section id="datos" class="perfil-section">
+                    <h3>Datos Personales</h3>
+                    <form class="perfil-form" action="perfil-form" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </section>
+            </div>
         </div>
     </main>
 
@@ -114,43 +117,24 @@
             <div class="footer-content">
                 <div class="contacto">
                     <img src="img/Otras/LogoPatiGo.png" alt="Logo PatiGo" class="mb-4"
-                        style="height: 60px; width: auto;" loading="lazy">
-                    <address class="not-italic">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>
-                            Rúa Gondomar, 4<br>
-                            36740 - Tomiño (Pontevedra)
-                        </p>
-                    </address>
-
-                    <h2>Horario de Atención</h2>
-                    <p>De Lunes a Viernes: 10:00 - 14:00 / 16:00 - 20:00<br>
-                        Sábados: 10:00 - 13:30
-                    </p>
-
-                    <p><a href="tel:+34986123467" aria-label="Llamar al teléfono de PatiGo">986 12 34 67</a></p>
-                    <p><a href="mailto:infopatigo@gmail.com" aria-label="Enviar email a PatiGo">infopatigo@gmail.com</a>
-                    </p>
+                        style="height: 60px; width: auto;">
+                    <p>Rúa Gondomar, 4<br>36740 - Tomiño (Pontevedra)</p>
+                    <p>De Lunes a Viernes: 10:00 - 14:00 / 16:00 - 20:00<br>Sábados: 10:00 - 13:30</p>
+                    <p><a href="tel:+34986123467">986 12 34 67</a></p>
+                    <p><a href="mailto:infopatigo@gmail.com">infopatigo@gmail.com</a></p>
                 </div>
-
                 <div class="redes">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Seguir a PatiGo en Instagram">
-                        <img src="img/Otras/instagram (1).png" alt="Icono de Instagram" loading="lazy">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/Otras/instagram (1).png" alt="Instagram">
                     </a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Seguir a PatiGo en Facebook">
-                        <img src="img/Otras/facebook (1).png" alt="Icono de Facebook" loading="lazy">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/Otras/facebook (1).png" alt="Facebook">
                     </a>
                 </div>
             </div>
-
-            <p class="footer__texto">
-                &copy; <span id="currentYear">2024</span> PatiGo - Todos los derechos reservados
-            </p>
+            <p class="footer__texto">&copy; 2024 PatiGo - Todos los derechos reservados</p>
         </div>
     </footer>
-    <script src="js/menu.js"></script> <!-- Enlace a Javascript todo lo relacionado al menu -->
-    <script src="js/carrito.js"></script> <!-- Enlace a Javascript todo lo relacionado al menu -->
 </body>
 
 </html>
