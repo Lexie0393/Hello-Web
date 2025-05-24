@@ -517,6 +517,220 @@
     }
 } 
 
+/*PRODUCTO PERRO*/
+
+/* Video promocional */
+.video-promocional {
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-promocional video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: #000;
+}
+
+/* Personalización de los controles de video */
+.video-promocional video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.video-promocional video::-webkit-media-controls-panel {
+    padding: 0.5rem;
+}
+
+/* Grid de categorías */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.categoria-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.categoria-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.categoria-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.categoria-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.categoria-info h2 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.categoria-info p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Sección de productos destacados */
+.productos-destacados {
+    margin: 4rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.producto-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 1.5rem;
+}
+
+.producto-info h3 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.producto-descripcion {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.producto-precio {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.btn-comprar {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #dab408;
+}
+
+/* Información adicional */
+.info-adicional {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.info-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .categorias-grid,
+    .productos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .info-adicional {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-adicional {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-card img,
+    .categoria-card img {
+        height: 150px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+} 
+
  /* USUARIO*/
  .perfil-container {
     display: grid;
