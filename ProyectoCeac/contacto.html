@@ -32,8 +32,6 @@
 
                     <div class="dropdown">
                         <a class="navegacion__enlace" href="perro.html">Perro</a>
-                        <input type="checkbox" id="perro-menu" class="dropdown-toggle-input">
-                        <label for="perro-menu" class="dropdown-toggle">▾</label>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="perro-comida.html" role="menuitem">Comida</a></li>
                             <li><a href="perro-juguetes.html" role="menuitem">Juguetes y Motivadores</a></li>
@@ -44,8 +42,6 @@
 
                     <div class="dropdown">
                         <a class="navegacion__enlace" href="gato.html">Gato</a>
-                        <input type="checkbox" id="gato-menu" class="dropdown-toggle-input">
-                        <label for="gato-menu" class="dropdown-toggle">▾</label>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="gato-comida.html" role="menuitem">Comida</a></li>
                             <li><a href="gato-juguetes.html" role="menuitem">Juguetes y Rascadores</a></li>
@@ -61,33 +57,44 @@
                         <input type="search" id="buscar" class="search-input" placeholder="Buscar productos..."
                             aria-label="Campo de búsqueda">
                         <button type="submit" class="btn btn-primary" aria-label="Buscar">🔍</button>
-                        <div class="cart-container">
-                            <button type="button" class="btn btn-icon" id="userBtn" aria-label="Perfil de usuario">👤</button>
-                            <button type="button" class="btn btn-icon" id="cartBtn" aria-label="Carrito de compras">🛒</button>
-                            <span class="cart-count">0</span>
-                            <!-- Mini Carrito -->
-                            <div class="mini-cart" id="miniCart">
-                                <div class="mini-cart-header">
-                                    <h3>Carrito de Compras</h3>
-                                    <button class="mini-cart-item-remove" id="closeCart">✕</button>
-                                </div>
-                                <div class="mini-cart-items">
-                                    <!-- Los items se añadirán dinámicamente con JavaScript -->
-                                </div>
-                                <div class="mini-cart-footer">
-                                    <div class="mini-cart-total">
-                                        <span>Total:</span>
-                                        <span id="cartTotal">0.00€</span>
-                                    </div>
-                                    <button class="btn-checkout">Ir a Pagar</button>
-                                </div>
-                            </div>
-                        </div>
                     </form>
+
+                    <div class="user-cart-buttons">
+                        <button id="userBtn" class="btn-icon" aria-label="Acceder a mi cuenta">
+                            👤
+                        </button>
+                        <div class="cart-container">
+                            <button id="cartBtn" class="btn-icon" aria-label="Ver carrito">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </button>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
     </header>
+
+    <!-- Mini Carrito -->
+    <div class="mini-cart" id="miniCart">
+        <div class="mini-cart-header">
+            <h3>Mi Carrito</h3>
+            <button id="closeCart" class="modal-close">✕</button>
+        </div>
+        <div class="mini-cart-items">
+            <div class="empty-cart">
+                <p>Tu carrito está vacío</p>
+                <a href="perro.html" class="btn-primary">Ir a comprar</a>
+            </div>
+        </div>
+        <div class="mini-cart-footer">
+            <div class="mini-cart-total">
+                <span>Total:</span>
+                <span>0.00€</span>
+            </div>
+            <button class="btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
 
     <!-- Modal de Login -->
     <div class="modal" id="loginModal">

@@ -1,19 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PatiGo - Tienda de Mascotas</title>
+    <title>Alimentación para Perros - PatiGo!</title>
     <meta name="description"
-        content="Encuentra todo lo que necesitas para tu perro y tu gato: alimentación, juguetes, paseo e higiene.">
-    <meta name="keywords" content="mascotas, perros, gatos, comida, juguetes, higiene, tienda online">
-    <meta name="author" content="PatiGo">
+        content="Descubre nuestra selección de alimentos para perros: pienso seco premium, comida húmeda, Barf y snacks. Nutrición de calidad para tu mascota.">
+    <meta name="keywords"
+        content="comida perros, pienso perros, alimentación canina, comida húmeda perros, snacks perros, Barf perros">
+    <meta name="author" content="PatiGo!">
+    <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <header class="header" role="banner">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center flex-wrap">
+                <a href="index.html" aria-label="Ir a la página principal de PatiGo">
+                    <img class="header__logo" src="img/Otras/LogoPatiGo.png"
+                        alt="Logotipo de PatiGo - Tienda de Mascotas">
+                </a>
+
+                <nav class="navegacion" role="navigation" aria-label="Navegación principal">
+                    <a class="navegacion__enlace" href="index.html">Inicio</a>
+
+                    <div class="dropdown">
+                        <a class="navegacion__enlace navegacion__enlace--activo" href="perro.html">Perro</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="perro-comida.html">Comida</a></li>
+                            <li><a href="perro-juguetes.html">Juguetes y Motivadores</a></li>
+                            <li><a href="perro-paseo.html">Paseo y Descanso</a></li>
+                            <li><a href="perro-higiene.html">Higiene</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <a class="navegacion__enlace" href="gato.html">Gato</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="gato-comida.html">Comida</a></li>
+                            <li><a href="gato-juguetes.html">Juguetes y Rascadores</a></li>
+                            <li><a href="gato-descanso.html">Descanso</a></li>
+                            <li><a href="gato-higiene.html">Higiene</a></li>
+                        </ul>
+                    </div>
+
+                    <a class="navegacion__enlace" href="contacto.html">Contacto</a>
+
+                    <form class="buscador" role="search" aria-label="Buscar productos">
+                        <label for="buscar" class="sr-only">Buscar productos</label>
+                        <input type="search" id="buscar" class="search-input" placeholder="Buscar productos..."
+                            aria-label="Campo de búsqueda">
+                        <button type="submit" class="btn btn-primary" aria-label="Buscar">🔍</button>
+                    </form>
+
+                    <div class="user-cart-buttons">
+                        <button id="userBtn" class="btn-icon" aria-label="Acceder a mi cuenta">
+                            👤
+                        </button>
+                        <div class="cart-container">
+                            <button type="button" class="btn btn-icon" id="cartBtn" aria-label="Carrito de compras">🛒</button>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Mini Carrito -->
+                    <div id="miniCart" class="mini-cart">
+                        <div class="mini-cart-header">
+                            <h3>Mi Carrito</h3>
+                            <button id="closeCart" class="modal-close">✕</button>
+                        </div>
+                        <div class="mini-cart-items">
+                            <div class="empty-cart">
+                                <p>Tu carrito está vacío</p>
+                                <a href="perro.html" class="btn-primary">Ir a comprar</a>
+                            </div>
+                        </div>
+                        <div class="mini-cart-footer">
+                            <div class="mini-cart-total">
+                                <span>Total:</span>
+                                <span>0.00€</span>
+                            </div>
+                            <button class="btn-checkout">Finalizar Compra</button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-header">
+                <h2>Iniciar Sesión</h2>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email-login">Email</label>
+                    <input type="email" id="email-login" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Recordarme
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+                <p class="register-link">
+                    ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <main class="contenido-principal container mx-auto px-4" role="main">
+        <h1 class="font-staatliches text-center my-6">Alimentación para Perros</h1>
+
+        <!-- Filtros -->
+        <section class="filtros" aria-label="Filtros de productos">
+            <div class="filtros-container">
+                <button class="filtro-btn" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="pienso">Pienso Seco</button>
+                <button class="filtro-btn" data-categoria="humeda">Comida Húmeda</button>
+                <button class="filtro-btn" data-categoria="barf">Barf</button>
+                <button class="filtro-btn" data-categoria="snacks">Snacks</button>
+            </div>
+        </section>
+
+        <!-- Productos -->
+        <section class="productos-grid" aria-label="Lista de productos">
+            <!-- Pienso Seco -->
+            <article class="producto-card" data-categoria="pienso">
+                <img src="img/Comida perro/royal-canin-puppy.jpg" alt="Royal Canin Puppy" loading="lazy">
+                <div class="producto-info">
+                    <h3>Royal Canin Puppy</h3>
+                    <p class="producto-descripcion">Alimento completo para cachorros hasta 12 meses</p>
+                    <p class="producto-precio">44.95€</p>
+                    <button class="btn btn-primary btn-comprar" data-id="1" data-nombre="Royal Canin Puppy"
+                        data-precio="44.95" data-imagen="img/Comida perro/royal-canin-puppy.jpg">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </article>
+
+            <article class="producto-card" data-categoria="pienso">
+                <img src="img/Comida perro/advance-adult.jpg" alt="Advance Adult" loading="lazy">
+                <div class="producto-info">
+                    <h3>Advance Adult</h3>
+                    <p class="producto-descripcion">Pienso para perros adultos todas las razas</p>
+                    <p class="producto-precio">49.95€</p>
+                    <button class="btn btn-primary btn-comprar" data-id="2" data-nombre="Advance Adult"
+                        data-precio="49.95" data-imagen="img/Comida perro/advance-adult.jpg">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Comida Húmeda -->
+            <article class="producto-card" data-categoria="humeda">
+                <img src="img/Comida perro/taste-wild.jpg" alt="Taste of the Wild" loading="lazy">
+                <div class="producto-info">
+                    <h3>Taste of the Wild</h3>
+                    <p class="producto-descripcion">Latas de carne en salsa natural</p>
+                    <p class="producto-precio">2.95€</p>
+                    <button class="btn btn-primary btn-comprar" data-id="3" data-nombre="Taste of the Wild"
+                        data-precio="2.95" data-imagen="img/Comida perro/taste-wild.jpg">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Barf -->
+            <article class="producto-card" data-categoria="barf">
+                <img src="img/Comida perro/natures-menu.jpg" alt="Nature's Menu" loading="lazy">
+                <div class="producto-info">
+                    <h3>Nature's Menu</h3>
+                    <p class="producto-descripcion">Alimento natural congelado para perros</p>
+                    <p class="producto-precio">8.95€</p>
+                    <button class="btn btn-primary btn-comprar" data-id="4" data-nombre="Nature's Menu"
+                        data-precio="8.95" data-imagen="img/Comida perro/natures-menu.jpg">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Snacks -->
+            <article class="producto-card" data-categoria="snacks">
+                <img src="img/Comida perro/dentastix.jpg" alt="Pedigree Dentastix" loading="lazy">
+                <div class="producto-info">
+                    <h3>Pedigree Dentastix</h3>
+                    <p class="producto-descripcion">Snacks dentales para higiene bucal</p>
+                    <p class="producto-precio">4.95€</p>
+                    <button class="btn btn-primary btn-comprar" data-id="5" data-nombre="Pedigree Dentastix"
+                        data-precio="4.95" data-imagen="img/Comida perro/dentastix.jpg">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </article>
+
+            <!-- Snacks Premium -->
+            <article class="producto-card" data-categoria="snacks">
+                <img src="img/Comida perro/mediterranean.jpg" alt="Mediterranean Natural" loading="lazy">
+                <div class="producto-info">
+                    <h3>Mediterranean Natural</h3>
+                    <p class="producto-descripcion">Snacks naturales deshidratados</p>
+                    <p class="producto-precio">6.95€</p>
+                    <button class="btn btn-primary btn-comprar" data-id="6" data-nombre="Mediterranean Natural"
+                        data-precio="6.95" data-imagen="img/Comida perro/mediterranean.jpg">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <!-- Información adicional -->
+        <section class="info-adicional" aria-label="Información adicional">
+            <div class="info-card">
+                <span class="icon">🚚</span>
+                <h3>Envío Gratis</h3>
+                <p>En pedidos superiores a 75€</p>
+            </div>
+            <div class="info-card">
+                <span class="icon">💯</span>
+                <h3>Garantía de Calidad</h3>
+                <p>Productos de primera calidad</p>
+            </div>
+            <div class="info-card">
+                <span class="icon">🔄</span>
+                <h3>Devolución Fácil</h3>
+                <p>30 días para devoluciones</p>
+            </div>
+            <div class="info-card">
+                <span class="icon">💬</span>
+                <h3>Atención Personalizada</h3>
+                <p>Asesoramiento experto</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container mx-auto px-4">
+            <div class="footer-content">
+                <div class="contacto">
+                    <img src="img/Otras/LogoPatiGo.png" alt="Logo PatiGo" class="mb-4"
+                        style="height: 60px; width: auto;">
+                    <p>Rúa Gondomar, 4<br>36740 - Tomiño (Pontevedra)</p>
+                    <p>De Lunes a Viernes: 10:00 - 14:00 / 16:00 - 20:00<br>Sábados: 10:00 - 13:30</p>
+                    <p><a href="tel:+34986123467">986 12 34 67</a></p>
+                    <p><a href="mailto:infopatigo@gmail.com">infopatigo@gmail.com</a></p>
+                </div>
+                <div class="redes">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/Otras/instagram (1).png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/Otras/facebook (1).png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+            <p class="footer__texto">&copy; 2024 PatiGo - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/filtros.js"></script>
 </body>
+
 </html>

@@ -56,33 +56,72 @@
                         <input type="search" id="buscar" class="search-input" placeholder="Buscar productos..."
                             aria-label="Campo de búsqueda">
                         <button type="submit" class="btn btn-primary" aria-label="Buscar">🔍</button>
-                        <a href="usuario.html" class="btn btn-icon" id="userBtn" aria-label="Perfil de usuario">👤</a>
+                    </form>
+
+                    <div class="user-cart-buttons">
+                        <button id="userBtn" class="btn-icon" aria-label="Acceder a mi cuenta">
+                            👤
+                        </button>
                         <div class="cart-container">
                             <button type="button" class="btn btn-icon" id="cartBtn" aria-label="Carrito de compras">🛒</button>
                             <span class="cart-count">0</span>
-                            <!-- Mini Carrito -->
-                            <div class="mini-cart" id="miniCart">
-                                <div class="mini-cart-header">
-                                    <h3>Carrito de Compras</h3>
-                                    <button class="mini-cart-item-remove" id="closeCart">✕</button>
-                                </div>
-                                <div class="mini-cart-items">
-                                    <!-- Los items se añadirán dinámicamente con JavaScript -->
-                                </div>
-                                <div class="mini-cart-footer">
-                                    <div class="mini-cart-total">
-                                        <span>Total:</span>
-                                        <span id="cartTotal">0.00€</span>
-                                    </div>
-                                    <button class="btn-checkout">Ir a Pagar</button>
-                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Mini Carrito -->
+                    <div id="miniCart" class="mini-cart">
+                        <div class="mini-cart-header">
+                            <h3>Mi Carrito</h3>
+                            <button id="closeCart" class="modal-close">✕</button>
+                        </div>
+                        <div class="mini-cart-items">
+                            <div class="empty-cart">
+                                <p>Tu carrito está vacío</p>
+                                <a href="gato.html" class="btn-primary">Ir a comprar</a>
                             </div>
                         </div>
-                    </form>
+                        <div class="mini-cart-footer">
+                            <div class="mini-cart-total">
+                                <span>Total:</span>
+                                <span>0.00€</span>
+                            </div>
+                            <button class="btn-checkout">Finalizar Compra</button>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
     </header>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-header">
+                <h2>Iniciar Sesión</h2>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email-login">Email</label>
+                    <input type="email" id="email-login" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Recordarme
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+                <p class="register-link">
+                    ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
 
     <main class="contenido-principal container mx-auto px-4" role="main">
         <h1 class="font-staatliches text-center my-6">Juguetes para Gatos</h1>

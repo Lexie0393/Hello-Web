@@ -29,26 +29,27 @@
 
                 <nav class="navegacion" role="navigation" aria-label="Navegación principal">
                     <a class="navegacion__enlace" href="index.html">Inicio</a>
+                    
                     <div class="dropdown">
                         <a class="navegacion__enlace navegacion__enlace--activo" href="perro.html">Perro</a>
-                        <input type="checkbox" id="perro-menu" class="dropdown-toggle-input">
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" role="menu">
                             <li><a href="perro-comida.html">Comida</a></li>
                             <li><a href="perro-juguetes.html">Juguetes y Motivadores</a></li>
                             <li><a href="perro-paseo.html">Paseo y Descanso</a></li>
                             <li><a href="perro-higiene.html">Higiene</a></li>
                         </ul>
                     </div>
+
                     <div class="dropdown">
                         <a class="navegacion__enlace" href="gato.html">Gato</a>
-                        <input type="checkbox" id="gato-menu" class="dropdown-toggle-input">
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" role="menu">
                             <li><a href="gato-comida.html">Comida</a></li>
                             <li><a href="gato-juguetes.html">Juguetes y Rascadores</a></li>
                             <li><a href="gato-descanso.html">Descanso</a></li>
                             <li><a href="gato-higiene.html">Higiene</a></li>
                         </ul>
                     </div>
+
                     <a class="navegacion__enlace" href="contacto.html">Contacto</a>
 
                     <form class="buscador" role="search" aria-label="Buscar productos">
@@ -56,13 +57,72 @@
                         <input type="search" id="buscar" class="search-input" placeholder="Buscar productos..."
                             aria-label="Campo de búsqueda">
                         <button type="submit" class="btn btn-primary" aria-label="Buscar">🔍</button>
-                        <button type="button" class="btn btn-icon" aria-label="Perfil de usuario">👤</button>
-                        <button type="button" class="btn btn-icon" aria-label="Carrito de compras">🛒</button>
                     </form>
+
+                    <div class="user-cart-buttons">
+                        <button id="userBtn" class="btn-icon" aria-label="Acceder a mi cuenta">
+                            👤
+                        </button>
+                        <div class="cart-container">
+                            <button type="button" class="btn btn-icon" id="cartBtn" aria-label="Carrito de compras">🛒</button>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Mini Carrito -->
+                    <div id="miniCart" class="mini-cart">
+                        <div class="mini-cart-header">
+                            <h3>Mi Carrito</h3>
+                            <button id="closeCart" class="modal-close">✕</button>
+                        </div>
+                        <div class="mini-cart-items">
+                            <div class="empty-cart">
+                                <p>Tu carrito está vacío</p>
+                                <a href="perro.html" class="btn-primary">Ir a comprar</a>
+                            </div>
+                        </div>
+                        <div class="mini-cart-footer">
+                            <div class="mini-cart-total">
+                                <span>Total:</span>
+                                <span>0.00€</span>
+                            </div>
+                            <button class="btn-checkout">Finalizar Compra</button>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
     </header>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-header">
+                <h2>Iniciar Sesión</h2>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email-login">Email</label>
+                    <input type="email" id="email-login" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Recordarme
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+                <p class="register-link">
+                    ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
 
     <main class="contenido-principal container mx-auto px-4" role="main">
         <h1 class="font-staatliches text-center my-6">Productos para Perros</h1>
