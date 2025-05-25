@@ -1,52 +1,69 @@
 // Actualizar año actual
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('currentYear')?.textContent = new Date().getFullYear();
 
-// despliegue menu
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-    const toggle = dropdown.querySelector('.dropdown-toggle');
-    const menu = dropdown.querySelector('.dropdown-menu');
-
-    toggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', !isExpanded);
-    });
-
-    // Cerrar despliegue menu al hacer click fuera
-    document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) {
-            toggle.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    // Cerrar despliegue menu con la tecla escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.focus();
-        }
+// Manejo de menús desplegables
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.navegacion__enlace');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        // Mostrar menú al pasar el mouse
+        dropdown.addEventListener('mouseenter', () => {
+            menu.style.display = 'block';
+        });
+        
+        // Ocultar menú al quitar el mouse
+        dropdown.addEventListener('mouseleave', () => {
+            menu.style.display = 'none';
+        });
+        
+        // Para dispositivos táctiles
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+        });
     });
 });
 
+// Cerrar menús al hacer clic fuera
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }
+});
+
 // Buscador
-document.querySelector('.buscador').addEventListener('submit', (e) => {
+document.querySelector('.buscador')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerm = document.getElementById('buscar').value.trim();
     if (searchTerm) {
-        // Here you would typically redirect to a search results page
         console.log('Buscando:', searchTerm);
         alert(`Buscando: "${searchTerm}"`);
     }
 });
 
-// Funcionalidad de los botones de usuario y carrito
-document.querySelector('[aria-label="Perfil de usuario"]').addEventListener('click', () => {
-    alert('Funcionalidad de perfil de usuario');
-});
+// Funcionalidad del carrito
+const cartBtn = document.getElementById('cartBtn');
+const miniCart = document.getElementById('miniCart');
+const closeCart = document.getElementById('closeCart');
 
-document.querySelector('[aria-label="Carrito de compras"]').addEventListener('click', () => {
-    alert('Funcionalidad del carrito de compras');
-});
+if (cartBtn && miniCart) {
+    cartBtn.onclick = function() {
+        miniCart.classList.toggle('active');
+    };
+}
+
+if (closeCart && miniCart) {
+    closeCart.onclick = function() {
+        miniCart.classList.remove('active');
+    };
+}
 
 // carga de imagenes
 if ('IntersectionObserver' in window) {
@@ -68,13 +85,11 @@ if ('IntersectionObserver' in window) {
 
 // Optimización del rendimiento
 window.addEventListener('load', () => {
-    // Analytics code would go here
     console.log('Page fully loaded');
 });
 
 // Mejoras de accesibilidad
 document.addEventListener('keydown', (e) => {
-    // ir al contenido principal de la pestaña de la cabecera
     if (e.key === 'Tab' && document.activeElement === document.querySelector('.header__logo')) {
         const skipLink = document.createElement('a');
         skipLink.href = '#main-content';

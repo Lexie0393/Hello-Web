@@ -29,29 +29,26 @@
 
                 <nav class="navegacion" role="navigation" aria-label="Navegación principal">
                     <a class="navegacion__enlace" href="index.html">Inicio</a>
-
                     <div class="dropdown">
-                        <a class="dropdown-toggle navegacion__enlace navegacion__enlace--activo" href="perro.html" 
-                            aria-expanded="false" aria-haspopup="true" aria-current="page">Perro</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="perro-comida.html" role="menuitem">Comida</a></li>
-                            <li><a href="perro-juguetes.html" role="menuitem">Juguetes</a></li>
-                            <li><a href="perro-paseo.html" role="menuitem">Paseo</a></li>
-                            <li><a href="perro-higiene.html" role="menuitem">Higiene</a></li>
+                        <a class="navegacion__enlace navegacion__enlace--activo" href="perro.html">Perro</a>
+                        <input type="checkbox" id="perro-menu" class="dropdown-toggle-input">
+                        <ul class="dropdown-menu">
+                            <li><a href="perro-comida.html">Comida</a></li>
+                            <li><a href="perro-juguetes.html">Juguetes y Motivadores</a></li>
+                            <li><a href="perro-paseo.html">Paseo y Descanso</a></li>
+                            <li><a href="perro-higiene.html">Higiene</a></li>
                         </ul>
                     </div>
-
                     <div class="dropdown">
-                        <a class="dropdown-toggle navegacion__enlace" href="gato.html" aria-expanded="false"
-                            aria-haspopup="true">Gato</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="gato-comida.html" role="menuitem">Comida</a></li>
-                            <li><a href="gato-juguetes.html" role="menuitem">Juguetes</a></li>
-                            <li><a href="gato-descanso.html" role="menuitem">Descanso</a></li>
-                            <li><a href="gato-higiene.html" role="menuitem">Higiene</a></li>
+                        <a class="navegacion__enlace" href="gato.html">Gato</a>
+                        <input type="checkbox" id="gato-menu" class="dropdown-toggle-input">
+                        <ul class="dropdown-menu">
+                            <li><a href="gato-comida.html">Comida</a></li>
+                            <li><a href="gato-juguetes.html">Juguetes y Rascadores</a></li>
+                            <li><a href="gato-descanso.html">Descanso</a></li>
+                            <li><a href="gato-higiene.html">Higiene</a></li>
                         </ul>
                     </div>
-
                     <a class="navegacion__enlace" href="contacto.html">Contacto</a>
 
                     <form class="buscador" role="search" aria-label="Buscar productos">
@@ -92,9 +89,9 @@
 
             <article class="categoria-card">
                 <a href="perro-juguetes.html" class="categoria-link">
-                    <img src="img/Otras/Perros-jugando.png" alt="Juguetes para perros" loading="lazy">
+                    <img src="img/Otras/Perros-jugando.png" alt="Juguetes y motivadores para perros" loading="lazy">
                     <div class="categoria-info">
-                        <h2>Juguetes</h2>
+                        <h2>Juguetes y Motivadores</h2>
                         <p>Peluches, mordedores y juguetes interactivos</p>
                     </div>
                 </a>
@@ -102,10 +99,10 @@
 
             <article class="categoria-card">
                 <a href="perro-paseo.html" class="categoria-link">
-                    <img src="img/Otras/paseador-de-perros-1.jpg" alt="Accesorios de paseo para perros" loading="lazy">
+                    <img src="img/Otras/paseador-de-perros-1.jpg" alt="Accesorios de paseo y descanso para perros" loading="lazy">
                     <div class="categoria-info">
-                        <h2>Paseo</h2>
-                        <p>Correas, arneses y accesorios</p>
+                        <h2>Paseo y Descanso</h2>
+                        <p>Correas, arneses, camas y accesorios</p>
                     </div>
                 </a>
             </article>

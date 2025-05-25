@@ -150,4 +150,133 @@ class Carrito {
 // Inicializar carrito cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     new Carrito();
-}); 
+});
+
+// Elementos del DOM
+const cartBtn = document.getElementById('cartBtn');
+const miniCart = document.getElementById('miniCart');
+const closeCart = document.getElementById('closeCart');
+const userBtn = document.getElementById('userBtn');
+const loginModal = document.getElementById('loginModal');
+const closeModal = document.getElementById('closeModal');
+const cartCount = document.querySelector('.cart-count');
+const cartTotal = document.getElementById('cartTotal');
+const cartItems = document.querySelector('.mini-cart-items');
+
+// Estado del carrito
+let cart = [];
+let total = 0;
+
+// Funciones del carrito
+function updateCartCount() {
+    cartCount.textContent = cart.length;
+}
+
+function updateCartTotal() {
+    total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    cartTotal.textContent = `${total.toFixed(2)}€`;
+}
+
+function addToCart(product) {
+    const existingItem = cart.find(item => item.id === product.id);
+    
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+    
+    updateCartCount();
+    updateCartTotal();
+    renderCartItems();
+}
+
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCartCount();
+    updateCartTotal();
+    renderCartItems();
+}
+
+function renderCartItems() {
+    cartItems.innerHTML = '';
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<div class="empty-cart">Tu carrito está vacío</div>';
+        return;
+    }
+    
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'mini-cart-item';
+        itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="mini-cart-item-info">
+                <span class="mini-cart-item-name">${item.name}</span>
+                <span class="mini-cart-item-price">${item.price}€ x ${item.quantity}</span>
+            </div>
+            <button class="mini-cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
+        `;
+        cartItems.appendChild(itemElement);
+    });
+}
+
+// Event Listeners para el carrito
+cartBtn.addEventListener('click', () => {
+    miniCart.classList.toggle('active');
+});
+
+closeCart.addEventListener('click', () => {
+    miniCart.classList.remove('active');
+});
+
+// Cerrar el carrito cuando se hace clic fuera de él
+document.addEventListener('click', (e) => {
+    if (!miniCart.contains(e.target) && e.target !== cartBtn) {
+        miniCart.classList.remove('active');
+    }
+});
+
+// Event Listeners para el modal de login
+userBtn.addEventListener('click', () => {
+    loginModal.classList.add('active');
+});
+
+closeModal.addEventListener('click', () => {
+    loginModal.classList.remove('active');
+});
+
+// Cerrar el modal cuando se hace clic fuera de él
+loginModal.addEventListener('click', (e) => {
+    if (e.target === loginModal) {
+        loginModal.classList.remove('active');
+    }
+});
+
+// Prevenir el envío del formulario de login (temporal)
+document.querySelector('.login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Funcionalidad de login pendiente de implementar con PHP');
+});
+
+// Event listener para los botones de "Añadir al carrito"
+document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButtons = document.querySelectorAll('.btn-comprar');
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const product = {
+                id: parseInt(button.dataset.id),
+                name: button.dataset.nombre,
+                price: parseFloat(button.dataset.precio),
+                image: button.dataset.imagen
+            };
+            addToCart(product);
+            miniCart.classList.add('active');
+        });
+    });
+});
+
+// Inicialización
+updateCartCount();
+renderCartItems(); 
